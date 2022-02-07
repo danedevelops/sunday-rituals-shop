@@ -13,22 +13,22 @@ const Container = styled.div`
 `;
 
 const Products = ({ cat, filters, sort }) => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([popularProducts]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
-  useEffect(() => {
-    const getProducts = async () => {
-      try {
-        const res = await axios.get(
-          cat
-            ? `https://sunday-rituals.herokuapp.com/api/products?category=${cat}`
-            : "https://sunday-rituals.herokuapp.com/api/products"
-        );
-        setProducts(res.data);
-      } catch (err) {}
-    };
-    getProducts();
-  }, [cat]);
+  // useEffect(() => {
+  //   const getProducts = async () => {
+  //     try {
+  //       const res = await axios.get(
+  //         cat
+  //           ? `https://sunday-rituals.herokuapp.com/api/products?category=${cat}`
+  //           : "https://sunday-rituals.herokuapp.com/api/products"
+  //       );
+  //       setProducts(res.data);
+  //     } catch (err) {}
+  //   };
+  //   getProducts();
+  // }, [cat]);
 
   useEffect(() => {
     cat &&

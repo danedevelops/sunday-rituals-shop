@@ -39,27 +39,36 @@ export const categories = [
 
 export const popularProducts = [
   {
-    id: 1,
+    id: "62009e8daff5882e80135c59",
+    title: "Citrus Bar",
     img: citrus,
+    desc: "Locally made in Vancouver, BC with ethically-sourced, all natural ingredients.  Free of palm oil, artificial colours or fragrances.  Discontinue use if any irritation occurs.",
+    categories: ["Soaps", "Swag", "Lotions"],
+    size: ["Small", "Medium", "Large"],
+    price: 9,
+    ingredients:
+      "OLEA EUROPEA (OLIVE) OIL, SODIUM HYDROXIDE, COCOS NUCIFERA (COCONUT OIL) OIL, MACADAMIA, TERNIFOLIA (MACADAMIA) SEED OIL, BUTRYROSPEMUM PARKII (SHEA) BUTTER, KAOLIN (PINK CLAY), LAVANDULA ANGUSTIFOLIA (LAVENDER), CEDRUS DEODORA (CEDARWOOD), WOOD OIL.",
   },
   {
-    id: 2,
+    id: "62009e8daff5882e80135c58",
+    title: "Botanical Bar",
     img: botanical,
+    desc: "Locally made in Vancouver, BC with ethically-sourced, all natural ingredients.  Free of palm oil, artificial colours or fragrances.  Discontinue use if any irritation occurs.",
+    categories: ["Soaps", "Swag", "Lotions"],
+    size: ["Small", "Medium", "Large"],
+    price: 9,
+    ingredients:
+      "OLEA EUROPEA (OLIVE) OIL, SODIUM HYDROXIDE, COCOS NUCIFERA (COCONUT OIL) OIL, MACADAMIA, TERNIFOLIA (MACADAMIA) SEED OIL, BUTRYROSPEMUM PARKII (SHEA) BUTTER, KAOLIN (PINK CLAY), LAVANDULA ANGUSTIFOLIA (LAVENDER), CEDRUS DEODORA (CEDARWOOD), WOOD OIL.",
   },
   {
-    id: 3,
+    id: "62009e8daff5882e80135c58",
+    title: "Charcoal Bar",
     img: charcoal,
-  },
-  {
-    id: 4,
-    img: citrus,
-  },
-  {
-    id: 5,
-    img: botanical,
-  },
-  {
-    id: 6,
-    img: charcoal,
+    desc: "Locally made in Vancouver, BC with ethically-sourced, all natural ingredients.  Free of palm oil, artificial colours or fragrances.  Discontinue use if any irritation occurs.",
+    categories: ["Soaps", "Swag", "Lotions"],
+    size: ["Small", "Medium", "Large"],
+    price: 9,
+    ingredients:
+      "OLEA EUROPEA (OLIVE) OIL, SODIUM HYDROXIDE, COCOS NUCIFERA (COCONUT OIL) OIL, MACADAMIA, TERNIFOLIA (MACADAMIA) SEED OIL, BUTRYROSPEMUM PARKII (SHEA) BUTTER, KAOLIN (PINK CLAY), LAVANDULA ANGUSTIFOLIA (LAVENDER), CEDRUS DEODORA (CEDARWOOD), WOOD OIL.",
   },
 ];

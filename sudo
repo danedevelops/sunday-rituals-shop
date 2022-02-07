@@ -1,4 +1,0 @@
-COMMAND     PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
-Google      485 work   46u  IPv4 0xb6cf16d42552100b      0t0  TCP localhost:58988->localhost:hbci (ESTABLISHED)
-node      78219 work   24u  IPv4 0xb6cf16d424fcd00b      0t0  TCP *:hbci (LISTEN)
-node      78219 work   27u  IPv4 0xb6cf16d424fca76b      0t0  TCP localhost:hbci->localhost:58988 (ESTABLISHED)
