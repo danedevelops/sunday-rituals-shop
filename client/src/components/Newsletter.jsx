@@ -9,6 +9,8 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  color: #fedcc6;
+  background-color: black;
 `;
 const Title = styled.h1`
   font-size: 70px;
@@ -20,7 +22,6 @@ const Desc = styled.div`
   font-weight: 300;
   margin-bottom: 20px;
   ${mobile({ textAlign: "center" })}
-
 `;
 
 const InputContainer = styled.div`
@@ -42,7 +43,7 @@ const Input = styled.input`
 const Button = styled.button`
   flex: 1;
   border: none;
-  background-color: teal;
+  background-color: #fedcc6;
   color: white;
 `;
 
@@ -50,11 +51,11 @@ const Newsletter = () => {
   return (
     <Container>
       <Title>Newsletter</Title>
-      <Desc>Get timely updates from your favorite products.</Desc>
+      <Desc>Sign up to get the scoop on our latest drops.</Desc>
       <InputContainer>
-        <Input placeholder="Your email" />
+        <Input placeholder="Enter Email Address" />
         <Button>
-          <Send />
+          <Send style={{ color: "black" }} />
         </Button>
       </InputContainer>
     </Container>

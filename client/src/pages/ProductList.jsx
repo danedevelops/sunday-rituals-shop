@@ -8,7 +8,9 @@ import { mobile } from "../responsive";
 import { useLocation } from "react-router";
 import { useState } from "react";
 
-const Container = styled.div``;
+const Container = styled.div`
+  background-color: #fedcc6;
+`;
 
 const Title = styled.h1`
   margin: 20px;
@@ -17,6 +19,7 @@ const Title = styled.h1`
 const FilterContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  border-top: 2px solid black;
 `;
 
 const Filter = styled.div`
@@ -34,6 +37,8 @@ const FilterText = styled.span`
 const Select = styled.select`
   padding: 10px;
   margin-right: 20px;
+  color: #fedcc6;
+  background-color: black;
   ${mobile({ margin: "10px 0px" })}
 `;
 const Option = styled.option``;
@@ -54,20 +59,21 @@ const ProductList = () => {
 
   return (
     <Container>
-      <Navbar />
       <Announcement />
+      <Navbar />
+
       <Title>{cat}</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
           <Select name="color" onChange={handleFilters}>
             <Option disabled>Color</Option>
-            <Option>white</Option>
-            <Option>black</Option>
-            <Option>red</Option>
-            <Option>blue</Option>
-            <Option>yellow</Option>
-            <Option>green</Option>
+            <Option>White</Option>
+            <Option>Black</Option>
+            <Option>Red</Option>
+            <Option>Blue</Option>
+            <Option>Yellow</Option>
+            <Option>Green</Option>
           </Select>
           <Select name="size" onChange={handleFilters}>
             <Option disabled>Size</Option>
@@ -82,8 +88,8 @@ const ProductList = () => {
           <FilterText>Sort Products:</FilterText>
           <Select onChange={(e) => setSort(e.target.value)}>
             <Option value="newest">Newest</Option>
-            <Option value="asc">Price (asc)</Option>
-            <Option value="desc">Price (desc)</Option>
+            <Option value="asc">Lowest Price</Option>
+            <Option value="desc">Highest Price</Option>
           </Select>
         </Filter>
       </FilterContainer>

@@ -36,9 +36,8 @@ const TopButton = styled.button`
   font-weight: 600;
   cursor: pointer;
   border: ${(props) => props.type === "filled" && "none"};
-  background-color: ${(props) =>
-    props.type === "filled" ? "black" : "transparent"};
-  color: ${(props) => props.type === "filled" && "white"};
+  background-color: ${(props) => (props.type === "filled" ? "black" : "black")};
+  color: #fedcc6;
 `;
 
 const TopTexts = styled.div`
@@ -64,6 +63,7 @@ const Product = styled.div`
   display: flex;
   justify-content: space-between;
   ${mobile({ flexDirection: "column" })}
+  margin-top:5px;
 `;
 
 const ProductDetail = styled.div`
@@ -80,6 +80,8 @@ const Details = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  ${mobile({ margin: "5px 15px" })}
+  ${mobile({ fontSize: ".6rem" })}
 `;
 
 const ProductName = styled.span``;
@@ -155,8 +157,9 @@ const Button = styled.button`
   width: 100%;
   padding: 10px;
   background-color: black;
-  color: white;
+  color: #fedcc6;
   font-weight: 600;
+  cursor: pointer;
 `;
 
 const Cart = () => {
@@ -177,7 +180,8 @@ const Cart = () => {
         });
         history.push("/success", {
           stripeData: res.data,
-          products: cart, });
+          products: cart,
+        });
       } catch {}
     };
     stripeToken && makeRequest();
@@ -187,13 +191,10 @@ const Cart = () => {
       <Navbar />
       <Announcement />
       <Wrapper>
-        <Title>YOUR BAG</Title>
+        <Title>YOUR CART</Title>
         <Top>
           <TopButton>CONTINUE SHOPPING</TopButton>
-          <TopTexts>
-            <TopText>Shopping Bag(2)</TopText>
-            <TopText>Your Wishlist (0)</TopText>
-          </TopTexts>
+
           <TopButton type="filled">CHECKOUT NOW</TopButton>
         </Top>
         <Bottom>
@@ -248,8 +249,8 @@ const Cart = () => {
               <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <StripeCheckout
-              name="Lama Shop"
-              image="https://avatars.githubusercontent.com/u/1486366?v=4"
+              name="Sunday Rituals"
+              image="https://images.unsplash.com/photo-1508759073847-9ca702cec7d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
               billingAddress
               shippingAddress
               description={`Your total is $${cart.total}`}

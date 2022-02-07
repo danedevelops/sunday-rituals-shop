@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 const Container = styled.div`
   height: 60px;
   ${mobile({ height: "50px" })}
+  color: #fedcc6;
+  background-color: black;
 `;
 
 const Wrapper = styled.div`
@@ -23,6 +25,7 @@ const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
+  ${mobile({ display: "none" })}
 `;
 
 const Language = styled.span`
@@ -39,19 +42,20 @@ const SearchContainer = styled.div`
   padding: 5px;
 `;
 
-const Input = styled.input`
-  border: none;
-  ${mobile({ width: "50px" })}
-`;
-
 const Center = styled.div`
   flex: 1;
   text-align: center;
+  display: flex;
+  align-content: center;
+  flex-wrap: none;
 `;
 
 const Logo = styled.h1`
   font-weight: bold;
   ${mobile({ fontSize: "24px" })}
+  display:flex;
+  flex-wrap: none;
+  ${mobile({ paddingLeft: "7px" })}
 `;
 const Right = styled.div`
   flex: 1;
@@ -69,29 +73,32 @@ const MenuItem = styled.div`
 `;
 
 const Navbar = () => {
-  const quantity = useSelector(state=>state.cart.quantity)
+  const quantity = useSelector((state) => state.cart.quantity);
   return (
     <Container>
       <Wrapper>
-        <Left>
-          <Language>EN</Language>
-          <SearchContainer>
-            <Input placeholder="Search" />
-            <Search style={{ color: "gray", fontSize: 16 }} />
-          </SearchContainer>
-        </Left>
-        <Center>
-          <Logo>LAMA.</Logo>
-        </Center>
+        <Link to="/" style={{ textDecoration: "none", color: "#fedcc6" }}>
+          <Logo>Sunday Rituals</Logo>
+        </Link>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
-          <Link to="/cart">
-          <MenuItem>
-            <Badge badgeContent={quantity} color="primary">
-              <ShoppingCartOutlined />
-            </Badge>
-          </MenuItem>
+          <Link
+            to="/register"
+            style={{ textDecoration: "none", color: "#fedcc6" }}
+          >
+            <MenuItem>REGISTER</MenuItem>
+          </Link>
+          <Link
+            to="/login"
+            style={{ textDecoration: "none", color: "#fedcc6" }}
+          >
+            <MenuItem>SIGN IN</MenuItem>
+          </Link>
+          <Link to="/cart" style={{ textDecoration: "none", color: "#fedcc6" }}>
+            <MenuItem>
+              <Badge badgeContent={quantity}>
+                <ShoppingCartOutlined />
+              </Badge>
+            </MenuItem>
           </Link>
         </Right>
       </Wrapper>

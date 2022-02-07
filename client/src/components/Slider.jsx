@@ -3,10 +3,11 @@ import { useState } from "react";
 import styled from "styled-components";
 import { sliderItems } from "../data";
 import { mobile } from "../responsive";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 91vh;
   display: flex;
   position: relative;
   overflow: hidden;
@@ -53,16 +54,23 @@ const ImgContainer = styled.div`
 `;
 
 const Image = styled.img`
-  height: 80%;
+  height: 91%;
+  width: 100vw;
+  filter: brightness(70%);
 `;
 
 const InfoContainer = styled.div`
-  flex: 1;
-  padding: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-items: center;
+  color: #fedcc6;
+  text-align: center;
 `;
 
 const Title = styled.h1`
-  font-size: 70px;
+  font-size: 60px;
 `;
 
 const Desc = styled.p`
@@ -73,10 +81,15 @@ const Desc = styled.p`
 `;
 
 const Button = styled.button`
-  padding: 10px;
-  font-size: 20px;
-  background-color: transparent;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 18px;
+  background-color: #000;
   cursor: pointer;
+  border: none;
+  color: #fedcc6;
 `;
 
 const Slider = () => {
@@ -91,26 +104,31 @@ const Slider = () => {
 
   return (
     <Container>
-      <Arrow direction="left" onClick={() => handleClick("left")}>
+      {/* <Arrow direction="left" onClick={() => handleClick("left")}>
         <ArrowLeftOutlined />
-      </Arrow>
+      </Arrow> */}
       <Wrapper slideIndex={slideIndex}>
         {sliderItems.map((item) => (
           <Slide bg={item.bg} key={item.id}>
             <ImgContainer>
               <Image src={item.img} />
+              <InfoContainer>
+                <Title>{item.title}</Title>
+                <Desc>{item.desc}</Desc>
+                <Link
+                  to="/products/Soaps"
+                  style={{ textDecoration: "none", color: "#fedcc6" }}
+                >
+                  <Button>SHOP NOW</Button>
+                </Link>
+              </InfoContainer>
             </ImgContainer>
-            <InfoContainer>
-              <Title>{item.title}</Title>
-              <Desc>{item.desc}</Desc>
-              <Button>SHOW NOW</Button>
-            </InfoContainer>
           </Slide>
         ))}
       </Wrapper>
-      <Arrow direction="right" onClick={() => handleClick("right")}>
+      {/* <Arrow direction="right" onClick={() => handleClick("right")}>
         <ArrowRightOutlined />
-      </Arrow>
+      </Arrow> */}
     </Container>
   );
 };

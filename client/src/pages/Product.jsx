@@ -44,6 +44,11 @@ const Desc = styled.p`
   margin: 20px 0px;
 `;
 
+const Ingredients = styled.p`
+  margin: 20px 0px;
+  font-size: 8px;
+`;
+
 const Price = styled.span`
   font-weight: 100;
   font-size: 40px;
@@ -79,6 +84,8 @@ const FilterColor = styled.div`
 const FilterSize = styled.select`
   margin-left: 10px;
   padding: 5px;
+  color: #fedcc6;
+  background-color: black;
 `;
 
 const FilterSizeOption = styled.option``;
@@ -101,19 +108,23 @@ const Amount = styled.span`
   width: 30px;
   height: 30px;
   border-radius: 10px;
-  border: 1px solid teal;
+  border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0px 5px;
+  color: #fedcc6;
+  background-color: black;
 `;
 
 const Button = styled.button`
   padding: 15px;
-  border: 2px solid teal;
+  border: 2px solid black;
   background-color: white;
   cursor: pointer;
   font-weight: 500;
+  color: #fedcc6;
+  background-color: black;
 
   &:hover {
     background-color: #f8f4f4;
@@ -148,9 +159,7 @@ const Product = () => {
   };
 
   const handleClick = () => {
-    dispatch(
-      addProduct({ ...product, quantity, color, size })
-    );
+    dispatch(addProduct({ ...product, quantity, color, size }));
   };
   return (
     <Container>
@@ -163,7 +172,9 @@ const Product = () => {
         <InfoContainer>
           <Title>{product.title}</Title>
           <Desc>{product.desc}</Desc>
+          <Ingredients>{product.ingredients}</Ingredients>
           <Price>$ {product.price}</Price>
+
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>

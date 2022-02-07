@@ -30,10 +30,9 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f5fbfd;
+  background-color: none;
   position: relative;
-
-  &:hover ${Info}{
+  &:hover ${Info} {
     opacity: 1;
   }
 `;
@@ -49,6 +48,7 @@ const Circle = styled.div`
 const Image = styled.img`
   height: 75%;
   z-index: 2;
+  border-radius: 2rem;
 `;
 
 const Icon = styled.div`
@@ -77,8 +77,11 @@ const Product = ({ item }) => {
           <ShoppingCartOutlined />
         </Icon>
         <Icon>
-          <Link to={`/product/${item._id}`}>
-          <SearchOutlined />
+          <Link
+            to={`/product/${item._id}`}
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <SearchOutlined />
           </Link>
         </Icon>
         <Icon>
