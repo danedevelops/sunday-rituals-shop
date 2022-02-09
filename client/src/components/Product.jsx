@@ -6,6 +6,8 @@ import {
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+// fix product on deployed site
+
 const Info = styled.div`
   opacity: 0;
   width: 100%;
